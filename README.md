@@ -1,74 +1,70 @@
-# nlp-02-text-preprocessing
+# NLP 02 - Job Description Text Preprocessing
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/nlp-02-text-preprocessing/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/nlp-02-text-preprocessing/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/nlp-02-text-preprocessing/)
+[![CI](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://bethspornitz.github.io/nlp-02-text-preprocessing-custom/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
 [![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-> Prepare raw text for natural language processing using Python.
+> Analyze data analysis job descriptions using Python text preprocessing to identify commonly requested skills and qualifications.
 
 ## Project Overview
 
-Author: Denise Case
+Author: Beth Spornitz
 
 Date: 2026 October
 
 Second project in the Web Mining and Applied NLP course.
 
-This project introduces text preprocessing,
-an important foundation for natural language processing.
+The project applies text preprocessing techniques to job descriptions for Data Analyst, Business Analyst, and Data Governance positions.
 
-The goal is to read text data,
-apply common preprocessing techniques,
-compare raw and cleaned text,
-and understand how preprocessing decisions affect analysis.
+The goal is to identify frequently requested skills and qualifications while exploring how cleaning decisions affect the results.
 
 The project is configured in
 [pyproject.toml](pyproject.toml).
 
 ## Data
 
-The example uses text records stored in
-[data/text_data.txt](data/text_data.txt).
+The project will use at least 10 publicly available job descriptions gathered from job postings.
 
-Each line represents one text record.
+The descriptions will be saved in a text file.
 
-The project combines these records and applies
-several preprocessing operations to prepare
-the text for analysis.
+The analysis will focus on job responsibilities, required qualifications, and technical skills.
+
 
 ## Approach
 
-The project uses Python to clean and analyze text data.
+The project will use Python to prepare and analyze job descriptions for Data Analyst, Business Analyst, and Data Governance positions.
 
-The example demonstrates:
+The analysis will include:
 
-- Reading text records from a local file.
+- Reading job descriptions from a local text file.
 - Tokenizing text into individual words.
-- Normalizing text through lowercasing.
+- Converting text to lowercase.
 - Removing punctuation and special characters.
 - Filtering common stopwords.
 - Comparing token counts before and after preprocessing.
-- Computing token frequencies using Polars.
-- Visualizing changes in token distributions with Matplotlib.
+- Calculating word frequencies using Polars.
+- Visualizing frequently occurring terms using Matplotlib.
+- Investigating whether preprocessing removes meaningful technical terms such as AI, BI, SQL, or R.
+
+The goal is to understand how preprocessing choices affect the identification of commonly requested skills and qualifications in data-related jobs.
+
+### Project Components
 
 Explore these important project components:
 
-- [pyproject.toml](pyproject.toml) - project identity, dependencies, and tool configuration.
-- [data/](data/) - input text data.
-- [src/nlp/text_preprocessing.py](src/nlp/text_preprocessing.py) - executable Python preprocessing analysis.
-- [notebooks/text_preprocessing.ipynb](notebooks/text_preprocessing.ipynb) - interactive Jupyter notebook example.
-- [tests/](tests/) - automated tests.
-- [.github/workflows/](.github/workflows/) - automated testing and documentation deployment.
-- [docs/](docs/) - project documentation.
-- [zensical.toml](zensical.toml) - documentation configuration.
-
-The goal is to understand how raw text becomes
-cleaned, structured data suitable for analysis.
+- [pyproject.toml](pyproject.toml) - Project identity, dependencies, and tool configuration.
+- [data/](data/) - Input text data, including job descriptions.
+- [src/nlp/text_preprocessing.py](src/nlp/text_preprocessing.py) - Executable Python preprocessing analysis.
+- [notebooks/text_preprocessing.ipynb](notebooks/text_preprocessing.ipynb) - Interactive Jupyter notebook example.
+- [tests/](tests/) - Automated tests.
+- [.github/workflows/](.github/workflows/) - Automated testing and documentation deployment.
+- [docs/](docs/) - Project documentation.
+- [zensical.toml](zensical.toml) - Documentation configuration.
 
 ## Run the Project
 
@@ -127,7 +123,7 @@ uv run python -m pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/nlp-02-text-preprocessing/)
+The [hosted documentation site](https://bethspornitz.github.io/nlp-02-text-preprocessing-custom/)
 is published using Zensical and GitHub Pages.
 
 The documentation site is used to present the project report,
@@ -141,8 +137,8 @@ to check project files and publish the docs.
 
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/nlp-02-text-preprocessing/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/nlp-02-text-preprocessing/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
@@ -227,7 +223,7 @@ testing, documentation, and code quality.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/nlp-02-text-preprocessing/)
+- [Hosted Documentation](https://bethspornitz.github.io/nlp-02-text-preprocessing-custom/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
