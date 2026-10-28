@@ -1,5 +1,9 @@
 """text_preprocessing.py - Project script (example).
 
+# Author: Beth Spornitz
+# Updated: 2026-10
+# Project: NLP 02 - Text Preprocessing Custom
+
 Purpose
 
   Read text data, preprocess the text, compare raw and cleaned tokens,

@@ -14,7 +14,8 @@
 
 
 [project]
-name = "nlp"               # CUSTOM: Package distribution name (use lowercase and dashes).
+name = "nlp-02-text-preprocessing-custom"     # CUSTOM: Package distribution name (use lowercase and dashes).
+description = "Analyze data-related job descriptions using Python text preprocessing"
 readme = "README.md"
 requires-python = ">=3.14"
 version = "0.1.0"

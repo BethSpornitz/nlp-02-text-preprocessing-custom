@@ -1,5 +1,9 @@
 """NLP package.
 
+# Author: Beth Spornitz
+# Updated: 2026-10
+# Project: NLP 02 - Text Preprocessing Custom
+
 This file can be left empty; it just has to exist.
 
 By adding a file named __init__.py to a folder,
