@@ -173,14 +173,15 @@ STOP_WORDS: set[str] = {
     "were",
     "will",
     "with",
+    "text",
+    "language",
 }
 
-# Keep only tokens that:
-# - are longer than 2 characters
-# - are not in the stop word list
+# Keep tokens that:
 clean_tokens: list[str] = [
     token for token in tokens_no_punct if len(token) > 2 and token not in STOP_WORDS
 ]
+
 
 count_of_clean_tokens: int = len(clean_tokens)
 
