@@ -45,7 +45,7 @@ This project applies Python text preprocessing techniques to both the original e
 
 The analysis includes:
 
-- Reading text data from local CSV files.
+- Reading text data from local CSV and TXT files.
 - Tokenizing text into individual words.
 - Converting text to lowercase.
 - Removing punctuation and special characters.
@@ -56,7 +56,7 @@ The analysis includes:
 
 First, I modified the original preprocessing script by adding `text` and `language` to the stop-word list. This reduced the number of cleaned tokens from 46 to 38.
 
-I then created a custom Jupyter notebook to compare word frequencies across Data Analyst, Business Analyst, and Data Governance job descriptions. Short technical terms such as AI and BI were retained during preprocessing.
+I then created a custom Jupyter notebook to compare word frequencies across Data Analyst, Business Analyst, and Data Governance job descriptions. Short technical terms such as AI and BI were retained during preprocessing.  I verified that AI appeared once in the Business Analysts descriptions and BI appeared once in the Business Analyst descriptions, however, those terms do not appear in my charts because they are not in the top 5.
 
 ### Project Components
 
@@ -100,11 +100,11 @@ The original example produced 46 cleaned tokens. After adding two additional sto
 
 The custom analysis produced the following results:
 
-| Job Category | Cleaned Tokens | Common Terms |
+| Job Category | Cleaned Tokens | Five Most Frequent Terms |
 |---|---:|---|
-| Business Analyst | 85 | business, requirements, user, stakeholders |
-| Data Analyst | 92 | data, dashboards, SQL, Python |
-| Data Governance | 88 | data, governance, metadata, quality |
+| Business Analyst | 85 | business, requirements, user, document, collaborate |
+| Data Analyst | 92 | data, develop, dashboards, sql, power |
+| Data Governance | 88 | data, governance, metadata, quality, support |
 
 The results show differences in terminology across the three career paths.
 

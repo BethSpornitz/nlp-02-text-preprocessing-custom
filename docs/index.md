@@ -54,7 +54,7 @@ The job description analysis combined the four summaries within each category be
 
 The preprocessing function converted text to lowercase, removed punctuation, split text into words, and filtered common stop words.
 
-Short technical terms such as AI and BI were retained because they can be meaningful in data-related job descriptions.
+Short technical terms such as AI and BI were retained because they can be meaningful in data related job descriptions.
 
 The analysis calculated the ten most frequent words in each category and visualized the top five.
 
@@ -68,11 +68,13 @@ I also resolved a Ruff D103 linting error by adding a docstring to the preproces
 
 ## Results
 
-| Job Category | Cleaned Tokens | Most Frequent Terms |
+
+| Job Category | Cleaned Tokens | Five Most Frequent Terms |
 |---|---:|---|
-| Business Analyst | 85 | business (6), requirements (4), user (4) |
-| Data Analyst | 92 | data (5), develop (4), dashboards (4), SQL (4) |
-| Data Governance | 88 | data (15), governance (6), metadata (4), quality (4) |
+| Business Analyst | 85 | business (6), requirements (4), user (4), document (3), collaborate (3) |
+| Data Analyst | 92 | data (5), develop (4), dashboards (4), sql (4), power (3) |
+| Data Governance | 88 | data (15), governance (6), metadata (4), quality (4), support (3) |
+
 
 ### Visualization
 
