@@ -38,19 +38,19 @@ I also used Polars to read and organize the CSV dataset.
 
 I modified the original preprocessing script by adding `text` and `language` to the stop-word list.
 
-This allowed me to investigate how removing frequently occurring words affected the cleaned text.
+This allowed me to see how removing frequently occurring words affected the cleaned text.
 
 The original preprocessing produced 46 cleaned tokens. After my modification, the count decreased to 38 tokens, a reduction of approximately 17.4%.
 
 ### Part 2: Job Description Analysis
 
-I created a new Jupyter notebook, `job_description_analysis.ipynb`, to analyze terminology in three data-related career paths.
+I created a new Jupyter notebook, `job_description_analysis.ipynb`, to analyze terminology in three data related career paths.
 
 I wrote a preprocessing function, grouped descriptions by job category, calculated word frequencies, and created comparison charts.
 
 ## Methods and Settings
 
-The job-description analysis combined the four summaries within each category before preprocessing.
+The job description analysis combined the four summaries within each category before preprocessing.
 
 The preprocessing function converted text to lowercase, removed punctuation, split text into words, and filtered common stop words.
 
@@ -86,25 +86,25 @@ Business Analyst summaries frequently included requirements, user, and stakehold
 
 Data Analyst summaries frequently included dashboards, SQL, Python, and reporting.
 
-Data Governance summaries frequently included governance, metadata, quality, and lineage.
+Data Governance summaries frequently included governance, metadata, and quality.
 
 ## Interpretation and Insights
 
-The results suggest that Business Analyst positions emphasize requirements gathering and collaboration, while Data Analyst positions focus more heavily on technical analysis and reporting.
+The results suggest that Business Analyst positions use requirements for gathering and collaboration, while Data Analyst positions focus more heavily on technical analysis and reporting.
 
-Data Governance positions emphasize data management, policies, documentation, and quality controls.
+Data Governance positions emphasize data management, policies, and documentation.
 
-I found it interesting that the differences among the three career paths were visible even in a relatively small dataset.
+I found it interesting that the differences among the three career paths were visible even in a small dataset.
 
-The project also demonstrated how preprocessing decisions can influence word-frequency results.
+The project also showed how preprocessing decisions can influence word frequency results.
 
 ## Limitations
 
-The analysis used only 12 short, paraphrased job-posting summaries rather than complete job descriptions.
+The analysis used only 12 short, paraphrased job posting summaries rather than complete job descriptions.
 
 The summaries were collected as a small convenience sample, so the results should not be interpreted as representative of the entire job market.
 
-Word-frequency analysis also does not capture the full meaning or context of job requirements.
+Word frequency analysis also does not capture the full meaning or context of job requirements.
 
 ## Next Steps
 

@@ -32,11 +32,11 @@ The project is configured in
 The project uses two datasets:
 
 - `data/text_data.txt` — The original example dataset containing five short text records.
-- `data/job_descriptions.csv` — A custom dataset containing 12 paraphrased job-posting summaries, with four each from Data Analyst, Business Analyst, and Data Governance positions.
+- `data/job_descriptions.csv` — A custom dataset containing 12 paraphrased job posting summaries, with four each from Data Analyst, Business Analyst, and Data Governance positions.
 
-Each job-description record includes the role, job title, employer, source URL, and summarized description.
+Each job description record includes the role, job title, employer, source URL, and summarized description.
 
-The custom dataset was used to compare frequently occurring terminology across three data-related career paths.
+The custom dataset was used to compare frequently occurring terminology across three data related career paths.
 
 
 ## Approach
@@ -45,7 +45,7 @@ This project applies Python text preprocessing techniques to both the original e
 
 The analysis includes:
 
-- Reading text data from local TXT and CSV files.
+- Reading text data from local CSV files.
 - Tokenizing text into individual words.
 - Converting text to lowercase.
 - Removing punctuation and special characters.
@@ -54,7 +54,7 @@ The analysis includes:
 - Comparing frequently occurring terms across job categories.
 - Visualizing results using Matplotlib.
 
-I first modified the original preprocessing script by adding `text` and `language` to the stop-word list. This reduced the number of cleaned tokens from 46 to 38.
+First, I modified the original preprocessing script by adding `text` and `language` to the stop-word list. This reduced the number of cleaned tokens from 46 to 38.
 
 I then created a custom Jupyter notebook to compare word frequencies across Data Analyst, Business Analyst, and Data Governance job descriptions. Short technical terms such as AI and BI were retained during preprocessing.
 
