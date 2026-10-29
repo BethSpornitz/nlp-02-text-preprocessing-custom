@@ -26,32 +26,37 @@ The goal is to identify frequently requested skills and qualifications while exp
 The project is configured in
 [pyproject.toml](pyproject.toml).
 
+
 ## Data
 
-The project will use at least 10 publicly available job descriptions gathered from job postings.
+The project uses two datasets:
 
-The descriptions will be saved in a text file.
+- `data/text_data.txt` — The original example dataset containing five short text records.
+- `data/job_descriptions.csv` — A custom dataset containing 12 paraphrased job-posting summaries, with four each from Data Analyst, Business Analyst, and Data Governance positions.
 
-The analysis will focus on job responsibilities, required qualifications, and technical skills.
+Each job-description record includes the role, job title, employer, source URL, and summarized description.
+
+The custom dataset was used to compare frequently occurring terminology across three data-related career paths.
 
 
 ## Approach
 
-The project will use Python to prepare and analyze job descriptions for Data Analyst, Business Analyst, and Data Governance positions.
+This project applies Python text preprocessing techniques to both the original example dataset and a custom dataset of job descriptions.
 
-The analysis will include:
+The analysis includes:
 
-- Reading job descriptions from a local text file.
+- Reading text data from local TXT and CSV files.
 - Tokenizing text into individual words.
 - Converting text to lowercase.
 - Removing punctuation and special characters.
-- Filtering common stopwords.
-- Comparing token counts before and after preprocessing.
-- Calculating word frequencies using Polars.
-- Visualizing frequently occurring terms using Matplotlib.
-- Investigating whether preprocessing removes meaningful technical terms such as AI, BI, SQL, or R.
+- Filtering common stop words.
+- Calculating word frequencies.
+- Comparing frequently occurring terms across job categories.
+- Visualizing results using Matplotlib.
 
-The goal is to understand how preprocessing choices affect the identification of commonly requested skills and qualifications in data-related jobs.
+I first modified the original preprocessing script by adding `text` and `language` to the stop-word list. This reduced the number of cleaned tokens from 46 to 38.
+
+I then created a custom Jupyter notebook to compare word frequencies across Data Analyst, Business Analyst, and Data Governance job descriptions. Short technical terms such as AI and BI were retained during preprocessing.
 
 ### Project Components
 
@@ -65,6 +70,8 @@ Explore these important project components:
 - [.github/workflows/](.github/workflows/) - Automated testing and documentation deployment.
 - [docs/](docs/) - Project documentation.
 - [zensical.toml](zensical.toml) - Documentation configuration.
+- [notebooks/text_preprocessing_modification.ipynb](notebooks/text_preprocessing_modification.ipynb) - Comparison of original and modified stop-word filtering.
+- [notebooks/job_description_analysis.ipynb](notebooks/job_description_analysis.ipynb) - Custom job-description analysis and visualizations.
 
 ## Run the Project
 
@@ -85,16 +92,44 @@ interactive version of the analysis.
 
 ## Results
 
-The example loads text records,
-applies preprocessing operations,
-and produces token frequency summaries.
+### Original Preprocessing Modification
 
-The analysis displays:
+The original example produced 46 cleaned tokens. After adding two additional stop words, the count decreased to 38, a reduction of approximately 17.4%.
 
-- Raw and cleaned token counts.
-- A comparison of preprocessing stages.
-- The most frequent cleaned tokens.
-- Visualizations of token frequencies and counts.
+### Job Description Analysis
+
+The custom analysis produced the following results:
+
+| Job Category | Cleaned Tokens | Common Terms |
+|---|---:|---|
+| Business Analyst | 85 | business, requirements, user, stakeholders |
+| Data Analyst | 92 | data, dashboards, SQL, Python |
+| Data Governance | 88 | data, governance, metadata, quality |
+
+The results show differences in terminology across the three career paths.
+
+### Custom Visualization
+
+![Most frequent terms across three job categories](docs/images/job_description_comparison.png)
+
+### Project Notebooks
+
+- [Text Preprocessing Modification](notebooks/text_preprocessing_modification.ipynb)
+- [Job Description Analysis](notebooks/job_description_analysis.ipynb)
+
+### Original Script Execution
+
+The original Python preprocessing script also generates token counts, frequency summaries, and visualizations.
+
+Successful execution displays:
+
+```text
+========================
+Pipeline executed successfully!
+========================
+```
+
+The script creates a `project.log` file containing execution details.
 
 Successful execution produces:
 
@@ -227,3 +262,5 @@ testing, documentation, and code quality.
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
+- [Original Example Project](https://github.com/denisecase/nlp-02-text-preprocessing)
+- [Custom Job Description Dataset](data/job_descriptions.csv)

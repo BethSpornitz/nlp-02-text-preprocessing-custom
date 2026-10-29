@@ -1,90 +1,129 @@
-# Web Mining and Applied NLP Project Report
+# Text Preprocessing and Job Description Analysis
 
-Web Mining and Applied NLP | Project 02 | Example Report
+**Beth Spornitz | October 2026**
+**Web Mining and Applied NLP | Project 02**
 
 ## Overview
 
-This project introduces text preprocessing
-as a foundation for natural language processing.
+This project explores how text preprocessing techniques can be used to clean and analyze unstructured text. I first modified the original text preprocessing example to examine how changing stop words affected the results. I then created a custom application comparing terminology used in Data Analyst, Business Analyst, and Data Governance job postings.
 
-The objective is to demonstrate how raw text
-can be tokenized, normalized, cleaned,
-and prepared for systematic analysis.
+## Data
 
-The project compares the results of
-different preprocessing operations
-to show how cleaning decisions affect
-the representation of text.
+The original example uses `data/text_data.txt`, which contains five short text records.
 
-## Tools and Methods
+For my custom application, I created `data/job_descriptions.csv`, containing 12 short, paraphrased summaries of job postings. The dataset includes four summaries for each of three categories:
 
-The project uses:
+- Data Analyst
+- Business Analyst
+- Data Governance
 
-- Python for text processing and analysis.
-- Local text files for input data.
-- Regular expressions for punctuation removal.
-- Tokenization for separating text into words.
-- Lowercasing for text normalization.
-- Stopword filtering for reducing common vocabulary.
-- Polars for calculating token frequencies.
-- Matplotlib for visualizing preprocessing results.
-- Logging for execution records.
-- Ruff, ty, and pytest for code verification.
-- Zensical and GitHub Pages for published documentation.
+Each record contains the job category, title, employer, source URL, and summarized description.
 
-The example script reads text records,
-combines them into a corpus,
-and applies a sequence of preprocessing operations.
+## Techniques Applied
 
-The analysis compares raw and cleaned token counts
-and identifies frequently occurring words.
+I used Python and several text preprocessing techniques:
+
+- Lowercasing text to standardize capitalization.
+- Removing punctuation using regular expressions.
+- Tokenizing text into individual words.
+- Removing common stop words.
+- Counting word frequencies.
+- Visualizing results with Matplotlib.
+
+I also used Polars to read and organize the CSV dataset.
+
+## Custom Modifications
+
+### Part 1: Modifying the Original Example
+
+I modified the original preprocessing script by adding `text` and `language` to the stop-word list.
+
+This allowed me to investigate how removing frequently occurring words affected the cleaned text.
+
+The original preprocessing produced 46 cleaned tokens. After my modification, the count decreased to 38 tokens, a reduction of approximately 17.4%.
+
+### Part 2: Job Description Analysis
+
+I created a new Jupyter notebook, `job_description_analysis.ipynb`, to analyze terminology in three data-related career paths.
+
+I wrote a preprocessing function, grouped descriptions by job category, calculated word frequencies, and created comparison charts.
+
+## Methods and Settings
+
+The job-description analysis combined the four summaries within each category before preprocessing.
+
+The preprocessing function converted text to lowercase, removed punctuation, split text into words, and filtered common stop words.
+
+Short technical terms such as AI and BI were retained because they can be meaningful in data-related job descriptions.
+
+The analysis calculated the ten most frequent words in each category and visualized the top five.
 
 ## Verification
 
-A successful execution displays:
+I verified that the CSV dataset contained 12 records, with four descriptions in each job category.
 
-    Pipeline executed successfully!
+I successfully executed the preprocessing and visualization notebook and confirmed that all three charts displayed.
 
-The script records execution details in a project log.
+I also resolved a Ruff D103 linting error by adding a docstring to the preprocessing function and rerunning the checks.
 
-The output includes token counts,
-frequency distributions,
-and preprocessing comparison charts.
+## Results
 
-Automated tests provide additional verification
-of the project's expected behavior.
+| Job Category | Cleaned Tokens | Most Frequent Terms |
+|---|---:|---|
+| Business Analyst | 85 | business (6), requirements (4), user (4) |
+| Data Analyst | 92 | data (5), develop (4), dashboards (4), SQL (4) |
+| Data Governance | 88 | data (15), governance (6), metadata (4), quality (4) |
 
-## Interpretation
+### Visualization
 
-Text preprocessing transforms raw language
-into a representation suitable for analysis.
+![Comparison of the five most frequent words across three job categories](images/job_description_comparison.png)
 
-Lowercasing, punctuation removal,
-and stopword filtering change the resulting
-token distribution.
+## Observations
 
-These operations can reduce unwanted noise,
-but they may also remove meaningful information.
+The three job categories showed different patterns in word frequency.
 
-Understanding these tradeoffs is important
-when preparing text for traditional NLP
-and modern language-model applications.
+Business Analyst summaries frequently included requirements, user, and stakeholders.
+
+Data Analyst summaries frequently included dashboards, SQL, Python, and reporting.
+
+Data Governance summaries frequently included governance, metadata, quality, and lineage.
+
+## Interpretation and Insights
+
+The results suggest that Business Analyst positions emphasize requirements gathering and collaboration, while Data Analyst positions focus more heavily on technical analysis and reporting.
+
+Data Governance positions emphasize data management, policies, documentation, and quality controls.
+
+I found it interesting that the differences among the three career paths were visible even in a relatively small dataset.
+
+The project also demonstrated how preprocessing decisions can influence word-frequency results.
+
+## Limitations
+
+The analysis used only 12 short, paraphrased job-posting summaries rather than complete job descriptions.
+
+The summaries were collected as a small convenience sample, so the results should not be interpreted as representative of the entire job market.
+
+Word-frequency analysis also does not capture the full meaning or context of job requirements.
+
+## Next Steps
+
+Future work could include collecting a larger dataset, analyzing complete job descriptions, identifying specific technical skills, and comparing job requirements over time.
+
+## Project Notebooks
+
+- [Original Preprocessing Modification](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom/blob/main/notebooks/text_preprocessing_modification.ipynb)
+- [Custom Job Description Analysis](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom/blob/main/notebooks/job_description_analysis.ipynb)
 
 ## Documentation Index
 
-- **Home** - this landing page
-- [**Project Instructions**](project-instructions.md)
-- [**Glossary**](glossary.md)
+- [Home](index.md)
+- [Project Instructions](project-instructions.md)
+- [Glossary](glossary.md)
 
 ## Project Links
 
-- [GitHub Repository](https://github.com/denisecase/nlp-02-text-preprocessing)
-- [Example Script](https://github.com/denisecase/nlp-02-text-preprocessing/blob/main/src/nlp/text_preprocessing.py)
-- [Example Notebook](https://github.com/denisecase/nlp-02-text-preprocessing/blob/main/notebooks/text_preprocessing.ipynb)
-- [Example Data](https://github.com/denisecase/nlp-02-text-preprocessing/blob/main/data/text_data.txt)
-
-## Project Resources
-
-- [Project Instructions](project-instructions.md)
+- [My GitHub Repository](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom)
+- [Original Example Repository](https://github.com/denisecase/nlp-02-text-preprocessing)
+- [Custom Job Description Dataset](https://github.com/BethSpornitz/nlp-02-text-preprocessing-custom/blob/main/data/job_descriptions.csv)
 - [Professional Python Guide](https://denisecase.github.io/pro-analytics-02/)
-- [Professional Python Project Explainer](https://pup-pack.github.io/professional-python-project-explainer/)
