@@ -1,4 +1,4 @@
-"""text_preprocessing.py - Project script (example).
+"""text_preprocessing.py - Project script.
 
 # Author: Beth Spornitz
 # Updated: 2026-10

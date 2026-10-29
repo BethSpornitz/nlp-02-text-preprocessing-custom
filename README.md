@@ -117,9 +117,11 @@ The results show differences in terminology across the three career paths.
 - [Text Preprocessing Modification](notebooks/text_preprocessing_modification.ipynb)
 - [Job Description Analysis](notebooks/job_description_analysis.ipynb)
 
+
 ### Original Script Execution
 
-The original Python preprocessing script also generates token counts, frequency summaries, and visualizations.
+The modified Python preprocessing script generates token counts,
+frequency summaries, and visualizations.
 
 Successful execution displays:
 
@@ -129,24 +131,9 @@ Pipeline executed successfully!
 ========================
 ```
 
-The script creates a `project.log` file containing execution details.
+The script also creates a `project.log` file containing execution
+details.
 
-Successful execution produces:
-
-```shell
-========================
-Pipeline executed successfully!
-========================
-```
-
-A `project.log` file is created in the project root.
-
-This confirms that the Python analysis executes
-and the logging system works.
-
-### Example Visualization
-
-![Word Cloud Example](docs/images/word_cloud_example.png)
 
 ## Verification
 
