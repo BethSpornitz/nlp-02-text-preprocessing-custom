@@ -108,6 +108,8 @@ The summaries were collected as a small convenience sample, so the results shoul
 
 Word frequency analysis also does not capture the full meaning or context of job requirements.
 
+The analysis counts individual words rather than complete phrases. For example, "Power BI" is separated into "power" and "bi." Additionally, several words may have the same frequency, so displaying only the five most common terms does not capture every equally frequent word.
+
 ## Next Steps
 
 Future work could include collecting a larger dataset, analyzing complete job descriptions, identifying specific technical skills, and comparing job requirements over time.
